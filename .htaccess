@@ -1,0 +1,15 @@
+# SetEnv CI_ENV production
+<ifModule mod_rewrite.c>
+	# ----------------------------------------------------------------------
+	# Activar RewriteEngine
+	# ----------------------------------------------------------------------
+	RewriteEngine on
+	# ----------------------------------------------------------------------
+	# Eliminar index.php
+	# ----------------------------------------------------------------------
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond $1 !^(index\.php|robots\.txt|sitemap\.xml|assets|tcpdf|upload)
+#	RewriteRule ^(.*)$ index.php?/$1 [L]
+	RewriteRule .* index.php?/$0 [PT,L] 
+</ifModule>

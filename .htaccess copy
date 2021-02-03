@@ -1,0 +1,11 @@
+
+
+<IfModule mod_rewrite.c>
+	RewriteEngine on
+
+	RewriteBase /iteca/
+
+	RewriteCond $1 !^(index\.php|robots\.txt|sitemap\.xml|assets)
+	RewriteRule ^(.*)$ index.php/$1 [L]
+</IfModule>
+Options -Indexes

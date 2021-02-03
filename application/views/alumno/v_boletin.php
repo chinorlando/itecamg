@@ -1,0 +1,1 @@
+<div id="boletin"></div>
